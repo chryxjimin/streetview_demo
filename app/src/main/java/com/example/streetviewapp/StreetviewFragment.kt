@@ -4,15 +4,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
 import kotlinx.android.synthetic.main.fragment_streetview.view.*
+import android.widget.CheckBox
+import com.google.android.gms.maps.StreetViewPanorama
+import com.google.android.gms.maps.SupportStreetViewPanoramaFragment
+import kotlinx.android.synthetic.main.fragment_streetview.*
+
 
 class StreetviewFragment : Fragment(), OnStreetViewPanoramaReadyCallback {
 
     var streetViewPanorama: StreetViewPanorama? = null
+//    private lateinit var zoomCheckbox: CheckBox
 
     override fun onStreetViewPanoramaReady(streetViewPanorama: StreetViewPanorama) {
         this.streetViewPanorama = streetViewPanorama
@@ -22,6 +29,7 @@ class StreetviewFragment : Fragment(), OnStreetViewPanoramaReadyCallback {
         val streetView = StreetViewPanoramaFragment.newInstance(
             StreetViewPanoramaOptions().position(location)
         )
+//        streetViewPanorama.isZoomGesturesEnabled = zoomCheckbox.isChecked()
     }
 
 
@@ -30,7 +38,10 @@ class StreetviewFragment : Fragment(), OnStreetViewPanoramaReadyCallback {
         savedInstanceState: Bundle?
     ): View? {
 
+
         val view = inflater.inflate(R.layout.fragment_streetview, container, false)
+
+//        zoomCheckbox = view.zoom
 
         val streetViewPanoramaFragment =
             childFragmentManager
@@ -40,12 +51,16 @@ class StreetviewFragment : Fragment(), OnStreetViewPanoramaReadyCallback {
         view.fab.setOnClickListener{navigateToHomePage()}
 
         return view
+
+
     }
 
 
     private fun navigateToHomePage() {
         Navigation.findNavController(requireView()).navigate(R.id.action_streetviewFragment_to_mapFragment)
     }
+
+
 
 
 }

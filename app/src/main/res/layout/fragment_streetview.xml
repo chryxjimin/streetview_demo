@@ -20,5 +20,13 @@
         android:src="@android:drawable/ic_dialog_map"
         android:id="@+id/fab" />
 
+<!--    <CheckBox-->
+<!--        android:id="@+id/zoom"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:onClick="onZoomToggled"-->
+<!--        android:checked="true"-->
+<!--        />-->
+
 
 </RelativeLayout>
