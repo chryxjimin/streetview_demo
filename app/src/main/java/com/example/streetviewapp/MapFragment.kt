@@ -24,9 +24,9 @@ import com.squareup.picasso.Picasso
 import org.json.JSONObject
 import org.json.JSONTokener
 
-const val REQUEST_CODE_LOCATION = 123
+//const val REQUEST_CODE_LOCATION = 123
 
-class MapFragment : Fragment(), OnMapReadyCallback {
+open class MapFragment : Fragment(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     val metadataUrl = "https://maps.googleapis.com/maps/api/streetview/metadata?location=34.02395343689089, -84.13859808694289&key=$MAPS_API_KEY"
@@ -46,13 +46,11 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         downloadJson()
 
         return view
-        mMap.uiSettings.setAllGesturesEnabled(true)
     }
 
 
     override fun onMapReady(googleMap: GoogleMap) {
-        // Return early if map is not initialised properly
-        mMap = googleMap ?: return
+        mMap = googleMap
 
         val location = LatLng(34.02395343689089, -84.13859808694289)
         mMap.addMarker(MarkerOptions().position(location).title("Marker"))
