@@ -30,7 +30,7 @@ open class MapFragment : Fragment(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     val metadataUrl = "https://maps.googleapis.com/maps/api/streetview/metadata?location=34.02395343689089, -84.13859808694289&key=$MAPS_API_KEY"
-    val imageUrl = "https://maps.googleapis.com/maps/api/streetview?size=400x400&location=34.02395343689089, -84.13859808694289&key=$MAPS_API_KEY"
+    val imageUrl = "https://maps.googleapis.com/maps/api/streetview?size=400x240&location=34.02395343689089, -84.13859808694289&key=$MAPS_API_KEY"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -68,7 +68,7 @@ open class MapFragment : Fragment(), OnMapReadyCallback {
             Request.Method.GET, metadataUrl ,
             Response.Listener { response ->
                 val jsonObject = JSONTokener(response).nextValue() as JSONObject
-                val imageView = view?.findViewById<ImageView>(R.id.imageView)
+                val imageView = view?.findViewById<ImageView>(R.id.streetviewPreview)
                 val status = jsonObject.getString("status")
                 println(status)
                 if (status == "ZERO_RESULTS" ) {
@@ -76,7 +76,6 @@ open class MapFragment : Fragment(), OnMapReadyCallback {
                 } else {
                     Picasso.get()
                         .load(imageUrl)
-                        .resize(100,100)
                         .into(imageView)
                     imageView?.setOnClickListener {viewStreetView()}
                 }
