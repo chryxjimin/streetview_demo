@@ -1,5 +1,3 @@
-
-
 package com.example.streetviewapp
 
 import android.content.Context
@@ -24,7 +22,6 @@ import kotlinx.android.synthetic.main.fragment_streetview.view.*
 
 class StreetviewFragment : Fragment(), OnStreetViewPanoramaReadyCallback {
 
-//    private var panorama: StreetViewPanorama? = null
     var streetViewPanorama: StreetViewPanorama? = null
     private lateinit var compassImageView: TextView
     private lateinit var gyroscopeSensor: Sensor;

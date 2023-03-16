@@ -29,8 +29,8 @@ import org.json.JSONTokener
 open class MapFragment : Fragment(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
-    val metadataUrl = "https://maps.googleapis.com/maps/api/streetview/metadata?location=34.02395343689089, -84.13859808694289&key=$MAPS_API_KEY"
-    val imageUrl = "https://maps.googleapis.com/maps/api/streetview?size=400x240&location=34.02395343689089, -84.13859808694289&key=$MAPS_API_KEY"
+    val metadataUrl = "https://maps.googleapis.com/maps/api/streetview/metadata?location=33.97041376155326, -84.096796220695918&key=$MAPS_API_KEY"
+    val imageUrl = "https://maps.googleapis.com/maps/api/streetview?size=400x240&location=33.97041376155326, -84.0967962206959&key=$MAPS_API_KEY"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
