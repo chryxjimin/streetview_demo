@@ -52,7 +52,7 @@ open class MapFragment : Fragment(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-        val location = LatLng(34.02395343689089, -84.13859808694289)
+        val location = LatLng(33.97041376155326, -84.0967962206959)
         mMap.addMarker(MarkerOptions().position(location).title("Marker"))
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 18f))
 
