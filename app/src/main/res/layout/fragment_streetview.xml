@@ -18,11 +18,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <Button
+    <ImageView
         android:id="@+id/compass_button"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:text="compass" />
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_compass_svgrepo_com"
+        android:layout_margin="10dp"
+        android:contentDescription="compass" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
@@ -30,7 +34,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:src="@android:drawable/ic_dialog_map"
-        android:id="@+id/fab" />
+        android:id="@+id/fab"
+        android:contentDescription="home" />
 
 
 

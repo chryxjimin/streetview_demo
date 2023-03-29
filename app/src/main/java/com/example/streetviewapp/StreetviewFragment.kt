@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.google.android.gms.maps.*
@@ -23,7 +24,7 @@ import kotlin.math.pow
 class StreetviewFragment : Fragment(), OnStreetViewPanoramaReadyCallback {
 
     var streetViewPanorama: StreetViewPanorama? = null
-    private lateinit var compassImageView: Button
+    private lateinit var compassImageView: ImageView
     private lateinit var gyroscopeSensor: Sensor;
     private lateinit var accelerometerSensor: Sensor;
     private lateinit var gravitySensor: Sensor;
@@ -105,7 +106,7 @@ class StreetviewFragment : Fragment(), OnStreetViewPanoramaReadyCallback {
                 linearAcceleration[1] = axisY - gravity[1]
                 linearAcceleration[2] = axisZ - gravity[2]
 
-                compassImageView.text = ("Accelerometer\n" + "X" + ":" + "$axisX\n" + "Y" + ":" + "$axisY\n" + "Z" + ":" + "$axisZ")
+//                compassImageView.text = ("Accelerometer\n" + "X" + ":" + "$axisX\n" + "Y" + ":" + "$axisY\n" + "Z" + ":" + "$axisZ")
 
                 var magnitude = Math.sqrt(
                     linearAcceleration[0].toDouble().pow(2.0) +
